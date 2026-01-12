@@ -1,0 +1,25 @@
+# Hybrid Retrieval Engine Dependencies
+# =====================================
+
+# LangChain Community - Document loaders and vector stores
+langchain-community>=0.0.20
+langchain>=0.1.0
+
+# FAISS - Facebook AI Similarity Search for dense retrieval
+# Using CPU version for broader compatibility
+faiss-cpu>=1.7.4
+
+# BM25 - Sparse retrieval using Okapi BM25 algorithm
+rank-bm25>=0.2.2
+
+# Cohere - Reranking API for result refinement
+cohere>=4.40
+
+# HuggingFace - Embedding models
+sentence-transformers>=2.2.2
+
+# PDF Processing
+pypdf>=3.17.0
+
+# NumPy - Required by FAISS and embeddings
+numpy>=1.24.0
