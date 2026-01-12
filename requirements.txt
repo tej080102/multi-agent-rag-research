@@ -1,9 +1,12 @@
 # Hybrid Retrieval Engine Dependencies
 # =====================================
 
-# LangChain Community - Document loaders and vector stores
-langchain-community>=0.0.20
-langchain>=0.1.0
+# LangChain - Core and community packages (new modular structure)
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+langchain-huggingface>=0.1.0
 
 # FAISS - Facebook AI Similarity Search for dense retrieval
 # Using CPU version for broader compatibility
@@ -23,3 +26,6 @@ pypdf>=3.17.0
 
 # NumPy - Required by FAISS and embeddings
 numpy>=1.24.0
+
+# Environment variable management
+python-dotenv>=1.0.0

@@ -34,10 +34,10 @@ from typing import List, Optional, Tuple
 
 import cohere
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.schema import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
 from rank_bm25 import BM25Okapi
 
 
@@ -382,9 +382,9 @@ class HybridRetriever:
         doc_texts = [doc.page_content for doc in unique_docs]
         
         # Call Cohere Rerank API
-        # rerank-english-v2.0 is the recommended model for English text
+        # rerank-v3.5 is the latest recommended model (as of 2024)
         response = self.cohere_client.rerank(
-            model="rerank-english-v2.0",
+            model="rerank-v3.5",
             query=query,
             documents=doc_texts,
             top_n=min(top_n, len(unique_docs))
